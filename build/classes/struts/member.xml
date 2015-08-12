@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+	"http://struts.apache.org/dtds/struts-2.0.dtd">
+	<struts>
+	<package name="member" namespace="/member" extends="default">
+		<action name="memberJoinForm">
+			<result>/jsp/member/memberJoin.jsp</result>
+		</action>
+		<action name="memberJoin" class="member.memberAction">
+			<result type="redirect">/index.action</result>
+		</action>
+		<action name="loginForm">
+			<result>/jsp/member/memberLogin.jsp</result>
+		</action>
+		<action name="login" class="member.memberAction" method="login">
+			<result type="redirectAction">
+				<param name="actionName">index</param>
+				<param name="namespace">/</param>
+			</result>
+		</action>
+		<action name="logout" class="member.memberAction" method="logout">
+			<result type="redirect">/index.action</result>
+		</action>
+		<action name="mypage_details" class="member.memberAction" method="mypageForm">
+			<result>/jsp/member/mypage_details.jsp</result>
+		</action>
+		<action name="profileUpdate" class="member.memberAction" method="profileUpdate">
+			<result>/jsp/member/mypage_details.jsp</result>
+		</action>
+		<action name="memberManagement" class="member.memberAction" method="memberManagementForm">
+			<result>/jsp/member/memberManagement.jsp</result>
+		</action>
+		<action name="teacherConfirm" class="member.memberAction" method="teacherConfirm">
+			<result type="redirectAction">
+				<param name="actionName">memberManagement</param>
+				<param name="namespace">/member</param>
+			</result>
+		</action>
+		<action name="studentConfirm" class="member.memberAction" method="studentConfirm">
+			<result type="redirectAction">
+				<param name="actionName">memberManagement</param>
+				<param name="namespace">/member</param>
+			</result>
+		</action>
+	</package>
+	</struts>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="test" namespace="/test" extends="default">
+	
+		<!-- 과목별시험등록 -->
+		<action name="testItUi" class="test.action.TestAction" method="testItUi">
+			<result>/jsp/test/itsubject.jsp</result>
+		</action>
+		<action name="searchSubject" class="test.action.TestAction" method="searchSubject">
+			<result type="json"></result>
+		</action>
+		<action name="insertSubjectForm" class="test.action.TestAction" method="insertSubjectForm">
+			<result>/jsp/test/subject/insertsubjectform.jsp</result>
+		</action>
+		<action name="insertTest" class="test.action.TestAction" method="insertTest">
+			<result type="json"></result>
+		</action>
+		<action name="deleteTest" class="test.action.TestAction" method="deleteTest">
+			<result>/jsp/test/itsubject.jsp</result>
+		</action>
+		<action name="editSubjectForm" class="test.action.TestAction" method="editSubjectForm">
+			<result>/jsp/test/subject/editSubjectForm.jsp</result>
+		</action>
+		<action name="editTest" class="test.action.TestAction" method="editTest">
+			<result type="json"></result>
+		</action>
+		<action name="insertGradeForm" class="test.action.TestAction" method="insertGradeForm">
+			<result>/jsp/test/subject/gradesubjectform.jsp</result>
+		</action>
+		<action name="insertSubjectGrade" class="test.action.TestAction" method="insertSubjectGrade">
+			<result type="json"></result>
+		</action>
+		<action name="editGradeForm" class="test.action.TestAction" method="editGradeForm">
+			<result>/jsp/test/subject/editgradeform.jsp</result>
+		</action>
+		<action name="eidtSubjectGrade" class="test.action.TestAction" method="eidtSubjectGrade">
+			<result type="json"></result>
+		</action>
+		
+		
+		<!-- 역량평가시험등록 -->
+		<action name="itCapacity" class="test.action.TestAction" method="itCapacity">
+			<result>/jsp/test/itcapacity.jsp</result>
+		</action>
+		<action name="capacityInsertForm" class="test.action.TestAction" method="capacityInsertForm">
+			<result>/jsp/test/capacity/capacityinsertform.jsp</result>
+		</action>
+		<action name="insertCapacityTest" class="test.action.TestAction" method="insertCapacityTest">
+			<result type="json"></result>
+		</action>
+	</package>
+</struts>
